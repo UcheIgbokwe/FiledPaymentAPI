@@ -16,7 +16,8 @@ namespace Persistence.Migrations
                     CardHolder = table.Column<string>(type: "TEXT", nullable: true),
                     ExpirationDate = table.Column<DateTime>(type: "TEXT", nullable: false),
                     SecurityCode = table.Column<string>(type: "TEXT", nullable: true),
-                    Amount = table.Column<decimal>(type: "TEXT", nullable: false)
+                    Amount = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Status = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table => table.PrimaryKey("PK_Payments", x => x.Id));
         }

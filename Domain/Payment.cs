@@ -10,5 +10,6 @@ namespace Domain
         public DateTime ExpirationDate { get; set; }
         public string SecurityCode { get; set; }
         public decimal Amount { get; set; }
+        public string Status { get; set; }
     }
 }

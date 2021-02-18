@@ -37,6 +37,9 @@ namespace Persistence.Migrations
                     b.Property<string>("SecurityCode")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Status")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.ToTable("Payments");
