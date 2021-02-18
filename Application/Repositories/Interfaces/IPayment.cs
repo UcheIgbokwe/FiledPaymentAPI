@@ -5,6 +5,6 @@ namespace Application.Repositories.Interfaces
 {
     public interface IPayment
     {
-         Task<bool> Process (Payment payment);
+        Task<bool> Process (Payment payment);
     }
 }

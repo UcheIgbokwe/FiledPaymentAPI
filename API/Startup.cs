@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.Repositories;
+using Application.Repositories.Interfaces;
+using Application.Services;
+using Application.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +34,8 @@ namespace API
             services.AddControllers();
             services.AddSwaggerGen(c => c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" }));
             services.AddDbContext<DataContext>(opt => opt.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+            services.AddSingleton<IPayment, PaymentRepository>();
+            services.AddTransient<IPaymentService, PaymentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
